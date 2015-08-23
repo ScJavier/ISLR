@@ -1,0 +1,91 @@
+---
+title: "ISLR Capítulo 2. Laboratorio de R"
+author: "Javier Santibáñez"
+date: "22 de agosto de 2015"
+output: pdf_document
+---
+
+### Introducción
+
+Este documento corresponde al laboratorio de `R` del capítulo 2 del libro *Introduction to Statistical Learning with applications in R*. Básicamente se reproduce el código en el texto y se agregan los comentarios pertinentes.
+
+Antes de iniciar se fija el directorio de trabajo para conservar los archivos correspondientes.
+
+```{r 'setwd'}
+setwd('C:/Users/Javier/OneDrive/Documentos/Ejercicios resueltos/ISLR/Capítulo 2')
+```
+
+### Comandos básicos
+
+Para crear un vector podemos utilizar la función `c`. El siguiente comando crea un vector llamado `x` con valores 1, 3, 2 y 5. Si queremos ver el valor del vector simplemente escribimos su nombre.
+
+```{r}
+x <- c(1, 3, 2, 5)
+x
+```
+
+También podemos guardar valores en objetos si escribimos $=$ en lugar de $<-$.
+
+```{r}
+x = c(1, 6, 2)
+x
+y = c(1, 4, 3)
+```
+
+Para sumar dos vectores (elemento a elemento) utilizamos el comando `+`. Esta operación se puede realizar sólo si los vectores tienen la misma longitud (o bien si la longitud de uno es múltiplo de la longitud del otro). Para verificar que esto se cumpla podemos utilizar la función `length()`.
+
+```{r}
+length(x)
+length(y)
+x + y
+```
+
+La función `ls()` imprime una lista de los objetos que hemos creado durante la sesión actual (variables, funciones o conjuntos de datos). Por ejemplo, en esta sesión unicamente hemos declarado las variables `x` y `y`.
+
+```{r}
+ls()
+```
+
+La función `rm()` nos permite eliminar objetos de nuestro espacio de trabajo. Por ejemplo, podemos borrar los objetos que hemos creado en esta sesión. Escribirmos nuevamente `ls()` para verificar que los objetos han sido eliminados.
+
+```{r}
+rm(x, y)
+ls()
+```
+
+Podemos utilizar la combinación `rm(list = ls())` para eliminar todos los objetos en nuestro espacio de trabajo.
+
+La función `matrix()` nos permite crear matrices en `R`. Se puede consultar la ayuda sobre esta función con los comandos `?matrix` o `help("matrix")`. Esta función tiene tres argumentos principales: las entradas de la matriz, el número de columnas y el número de filas. Consideremos el siguiente ejemplo:
+
+```{r}
+x <- matrix(data = c(1, 2, 3, 4), nrow = 2, ncol = 2)
+x
+```
+
+Como en cualquier función de `R`, podemos omitir los nombres de los argumentos, sólo debemos recordar declararlos en el orden correcto.
+
+```{r}
+x <- matrix(c(1, 2, 3, 4), 2, 2)
+```
+
+`R` rellena por defecto la matrix por columnas. Si queremos cambiar esto agregamos la opción `byrow = TRUE`.
+
+```{r}
+matrix(c(1, 2, 3, 4), 2, 2, byrow = TRUE)
+```
+
+
+
+### Gráficos
+
+
+
+
+
+
+
+
+
+
+
+
