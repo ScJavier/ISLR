@@ -74,7 +74,31 @@ x <- matrix(c(1, 2, 3, 4), 2, 2)
 matrix(c(1, 2, 3, 4), 2, 2, byrow = TRUE)
 ```
 
+Podemos utilizar las función `sqrt()` para obtener la raiz cuadrada elemento a elemento, es decir, la matriz (o vector) cuyas entradas son las raíces cuadradas de las entradas en el argumento.
 
+```{r}
+sqrt(x)
+```
+
+El operador `^` se aplica elemento a elemento y nos permite obtener cualquier potencia del arguemento. Por ejemplo, `x^2` nos devuelve la matriz cuyos entradas son los cuadrados de las entradas de la matriz `x`.
+
+```{r}
+x^2
+```
+
+La función `rnorm()` nos permite crear una serie de números (pseudo)aleatorios de una distruibución normal. Los argumentos principales son: `n =`número de observaciones, `mean = ` media, `sd = ` desviación estándard. Los valores por defecto son `mean = 0` y `sd = 1`.
+
+El siguiente código genera una muestra aleatoria de tamaño 50 de una distribución normal estándard y los guarda en `x`, despúes crea una variable `y` correlacionada con `x`. Para verificar la correlación entre las dos variables se utilza la función `cor()`. Para más información sobre esta última función se pueden usar los comandos `?cor` o `help("cor")`.
+
+```{r}
+x <- rnorm(50)
+y <- x + rnorm(50, mean = 50, sd = 0.1)
+cor(x, y)
+```
+
+Existen otras funciones en `R` que nos permiten generar muestras aleatorias de distintas distribuciones. Para más información se puede usar el comando `?distributions`.
+
+Cuando se requiere reproducir resultados que dependen de cantidades aleatorias es aconsejable fijar una semilla para generar los números aleatorios, esto nos permitirá generar siempre el mismo conjunto de números. La función es `set.seed()` y toma como argumento cualquier entero arbitrario (excepto 0, ya que esto nos fija como semilla una cantidad que depende del reloj del sistema, que prácticamente vuelve a ser no reproducible).
 
 ### Gráficos
 
