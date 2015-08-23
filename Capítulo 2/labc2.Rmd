@@ -1,5 +1,5 @@
 ---
-title: "ISLR Capítulo 2. Laboratorio de R"
+title: "ISLR Capítulo 2. Laboratorio de `R`"
 author: "Javier Santibáñez"
 date: "22 de agosto de 2015"
 output: pdf_document
